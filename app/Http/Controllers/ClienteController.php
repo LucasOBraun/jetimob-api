@@ -34,22 +34,31 @@ class ClienteController extends Controller
     // Lista dados do próprio cliente
     public function listaCliente(Request $request, $id)
     {
-        $cliente = $request->get('cliente_autenticado');
-
-        if ($cliente->id != $id) {
+        try {
+            $cliente = $request->get('cliente_autenticado');
+    
+            if ($cliente->id != $id) {
+                return response()->json([
+                    'success' => false,
+                    'error' => 'API Key inválida para este cliente.',
+                    'code' => 'API_KEY_INVALID'
+                ], 401);
+            }
+    
             return response()->json([
+                'id' => $cliente->id,
+                'nome' => $cliente->nome,
+                'email' => $cliente->email,
+                'saldo' => $cliente->saldo,
+            ]);
+        } catch (\Exception $e) {
+             return response()->json([
                 'success' => false,
-                'error' => 'API Key inválida para este cliente.',
-                'code' => 'API_KEY_INVALID'
-            ], 401);
+                'error' => 'Erro interno no servidor.',
+                'message' => $e->getMessage(),
+                'code' => 'INTERNAL_SERVER_ERROR'
+            ], 500);
         }
-
-        return response()->json([
-            'id' => $cliente->id,
-            'nome' => $cliente->nome,
-            'email' => $cliente->email,
-            'saldo' => $cliente->saldo,
-        ]);
     }
 
 }
