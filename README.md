@@ -106,8 +106,3 @@ A API retorna os seguintes erros com seus respectivos códigos:
 ## 📁 Arquivos Adicionais
 
 - [Postman Collection](docs/jetimob.postman_collection.json) - collection para testar a API
-
-
-## 📄 Licença
-
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
