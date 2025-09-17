@@ -43,6 +43,38 @@
 			"response": []
 		},
 		{
+			"name": "lista-clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "lista-cliente",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -53,7 +85,7 @@
 					"apikey": [
 						{
 							"key": "value",
-							"value": "1180857a-8507-4c31-8ab3-ba97f6472b4f",
+							"value": "",
 							"type": "string"
 						},
 						{
@@ -98,7 +130,7 @@
 					"apikey": [
 						{
 							"key": "value",
-							"value": "1180857a-8507-4c31-8ab3-ba97f6472b4f",
+							"value": "",
 							"type": "string"
 						},
 						{
@@ -137,6 +169,58 @@
 						"clientes",
 						"1",
 						"deposito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfere-valor",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"destinatario_id\": 2,\r\n    \"valor\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/clientes/1/transferencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"clientes",
+						"1",
+						"transferencia"
 					]
 				}
 			},
