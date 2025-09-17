@@ -36,34 +36,35 @@ Edite o arquivo `.env` para configurar as variáveis de ambiente, como conexão 
 composer install
 ```
 
-### 4. Gerar a Chave da Aplicação
+### 4. Iniciar servidor com Docker 📦
+A aplicação pode ser executada utilizando Docker. Certifique-se de ter o Docker e o Docker Compose instalados. Em seguida, execute:
+
+```bash
+docker compose up -d
+```
+
+Isso irá construir os containers necessários e iniciar a aplicação.
+A aplicação estará disponível em `http://localhost:8000`.
+
+### 5. Acessar o container da aplicação
+
+```bash
+docker ps 
+docker exec -it container-da-aplicacao-laravel up -d
+```
+Nome do container de acordo com o nome que aparecer no ```docker ps```.
+
+### 6. Gerar a Chave da Aplicação
 
 ```bash
 php artisan key:generate
 ```
 
-### 5. Rodar as Migrations
+### 7. Rodar as Migrations
 
 ```bash
 php artisan migrate
 ```
-
-### 6. Iniciar o Servidor
-
-```bash
-php artisan serve
-```
-
-## 📦 Docker
-
-A aplicação pode ser executada utilizando Docker. Certifique-se de ter o Docker e o Docker Compose instalados. Em seguida, execute:
-
-```bash
-docker-compose up -d
-```
-
-Isso irá construir os containers necessários e iniciar a aplicação.
-A aplicação estará disponível em `http://localhost:8000`.
 
 ## 🔐 Autenticação
 
