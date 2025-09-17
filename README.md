@@ -104,7 +104,7 @@ A API retorna os seguintes erros com seus respectivos códigos:
 
 ## 📁 Arquivos Adicionais
 
-- [Postman Collection](docs/jetimob.postman_collection.json) - coleção para testar a API
+- [Postman Collection](docs/jetimob.postman_collection.json) - collection para testar a API
 
 
 ## 📄 Licença
